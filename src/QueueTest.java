@@ -58,8 +58,8 @@ public class QueueTest {
 			}
 			left_node = queue.size();
 			System.out.println("Enqueue: "+enq_num+" Dequeue: " + deq_num+" Size of queue: "+ left_node);
-			double throughput = (double)timeout*1000000.0/(double)(enq_num+deq_num);
-			System.out.println("Throughtput: "+throughput+" microsecond");
+			double throughput = (double)(enq_num+deq_num)/(double)timeout/1000.0;
+			System.out.println("Throughtput: "+throughput+" opts/ms");
 			
 		}
         
