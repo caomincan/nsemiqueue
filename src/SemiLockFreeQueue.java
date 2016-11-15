@@ -82,18 +82,17 @@ public class SemiLockFreeQueue<T> implements myQueue<T> {
     		  int idx = rand.get().nextInt(n+1);
     		  if(idx == 0){
     			  // next is not null we need put head to next no marked node
-    			  if(next.marked.get())
-    				  head.compareAndSet(first, next);
-    			  }else{
-    				  Node tmp = first;
-    				  for(int i=0;i<idx&&tmp!=null;i++ ){
-    					  tmp = tmp.next.get();
+    			  if(next.marked.get()) head.compareAndSet(first, next);
+    		  }else{
+    			  Node tmp = first;
+    			  for(int i=0;i<idx&&tmp!=null;i++ ){
+    				  tmp = tmp.next.get();
     				  }
-    				  T value = tmp.value; // read value before dequeuing
-    				  // return only when logical dequeue happend
-    				  if (tmp.marked.compareAndSet(false, true))
-    					  return value;
-    				  }
+    			  T value = tmp.value; // read value before dequeuing
+    			  // return only when logical dequeue happend
+    			  if (tmp.marked.compareAndSet(false, true))
+    				  return value;
+    			  }
     		  }
     	  }
       }

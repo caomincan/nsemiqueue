@@ -1,17 +1,8 @@
-./src/edu/vt/ece/bench/Counter.java
-./src/edu/vt/ece/bench/SharedCounter.java
-./src/edu/vt/ece/bench/ThreadId.java
-./src/edu/vt/ece/bench/TestThread.java
-./src/edu/vt/ece/bench/TestThread2.java
-./src/edu/vt/ece/locks/Filter.java
-./src/edu/vt/ece/locks/Lock.java
-./src/edu/vt/ece/locks/LockOne.java
-./src/edu/vt/ece/locks/LockTwo.java
-./src/edu/vt/ece/locks/Peterson.java
-./src/edu/vt/ece/util/Tree.java
-./src/Test.java
-./src/Test2.java
-./src/edu/vt/ece/locks/TreeLock.java
-./src/edu/vt/ece/locks/TreePeterson.java
-./src/edu/vt/ece/util/TreeNode.java
+./src/EmptyException.java
+./src/FullException.java
+./src/LockFreeQueue.java
+./src/myQueue.java
+./src/QueueTest.java
+./src/SemiLockFreeQueue.java
+./src/TestThread.java
 
