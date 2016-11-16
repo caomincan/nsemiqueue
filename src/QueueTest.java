@@ -43,7 +43,6 @@ public class QueueTest {
 			for(int i=0;i<threads_num;i++){
 	        	threads[i] = new TestThread(queue,timeout);
 	        }
-			long start = System.nanoTime();
 			// start threads
 			for(int i=0;i<threads_num;i++){
 				threads[i].start();
@@ -57,10 +56,9 @@ public class QueueTest {
 				enq_num += threads[i].enq_num;
 				deq_num += threads[i].deq_num;
 			}
-			long timepass = System.nanoTime()-start;
 			left_node = queue.size();
 			System.out.println("Enqueue: "+enq_num+" Dequeue: " + deq_num+" Size of queue: "+ left_node);
-			double throughput = (double)(deq_num)/(double)timepass*1000000.0;
+			double throughput = (double)(deq_num)/(double)timeout/1000.0;
 			System.out.println("Throughtput: "+throughput+"  deq/ms");
 			
 		}
